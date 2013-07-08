@@ -1,7 +1,7 @@
 {
     "id": "jett9-clickstart",
     "name": "Jetty 9",
-    "source": "git://github.com/fbelzunc/jetty9-clickstart.git",
+    "source": "github",
     "description" : "Deploy your web application on Jetty 9",
     "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/jetty.png",
     "supported-by" : "community",
