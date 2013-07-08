@@ -1,7 +1,7 @@
 {
     "id": "jett9-clickstart",
     "name": "Jetty 9",
-    "source": "github",
+    "source": "git://github.com/fbelzunc/jetty9-clickstart.git",
     "description" : "Deploy your web application on Jetty 9",
     "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/jetty.png",
     "supported-by" : "community",
@@ -9,7 +9,7 @@
     "runtime": {
         "type": "jetty9",
         "app-parameters" : { 
-            "runtime.PLUGIN.SRC.dart": "https://felix.ci.cloudbees.com/job/jetty9-cs/ws/jetty9-plugin.zip"
+            "runtime.PLUGIN.SRC.jetty9": "https://felix.ci.cloudbees.com/job/jetty9-cs/ws/jetty9-plugin.zip"
         }    
     },
     "databases": [
