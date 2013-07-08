@@ -48,7 +48,7 @@ public class HelloServlet extends HttpServlet {
 		try {
 			ic = new InitialContext();
 		} catch (Exception e) {
-			throw new ServletException(e);
+			throw new ServletException(e); 
 		}
 	}
 
