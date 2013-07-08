@@ -23,7 +23,7 @@
     </parent>
     <groupId>localdomain.localhost</groupId>
     <artifactId>jetty9-clickstart</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>jetty9-clickstart Webapp</name>
     <dependencies>
