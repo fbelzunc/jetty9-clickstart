@@ -3,7 +3,7 @@ package org.example;
 import java.io.IOException;
 import java.sql.*;
 import javax.naming.InitialContext;
-import javax.servlet.ServletConfig; 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.sql.DataSource;
@@ -26,8 +26,6 @@ public class HelloServlet extends HttpServlet {
 			response.setContentType("text/html");
 			response.setStatus(HttpServletResponse.SC_OK);
 			response.getWriter().println("<h1>Hello Servlet</h1>");
-			response.getWriter().println(
-					"session=" + request.getSession(true).getId());
 			response.getWriter().println("<br>");
 			while (rs.next()) {
 				response.getWriter().println(
@@ -48,7 +46,7 @@ public class HelloServlet extends HttpServlet {
 		try {
 			ic = new InitialContext();
 		} catch (Exception e) {
-			throw new ServletException(e); 
+			throw new ServletException(e);
 		}
 	}
 
