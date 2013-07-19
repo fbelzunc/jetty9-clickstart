@@ -2,10 +2,10 @@
 
 This is a "ClickStart" that gets you going with a Maven - Jetty 9 "seed" project starting point. You can launch it here:
 
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/tomcat7-maven-clickstart/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
+<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/fbelzunc/jetty9-clickstart/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
 
 This will setup a continuous deployment pipeline - a CloudBees Git repository, a Jenkins build compiling and running the test suite (on each commit).
-Should the build succeed, this seed app is deployed on a Tomcat 9 container.
+Should the build succeed, this seed app is deployed on a Jetty 9 container.
 
 # CloudBees Jetty 9 container
 
@@ -13,13 +13,13 @@ Jetty 9 container is available on CloudBees thanks to the [jetty9-clickstack](ht
 
 # How to deploy a web application on a Jetty9 ClickStack
 
-You can deploy your web application on the tomcat7 clickstack using the [CloudBees SDK](https://developer.cloudbees.com/bin/view/RUN/BeesSDK) "`app:deploy`" command.
+You can deploy your web application on the jetty9 clickstack using the [CloudBees SDK](https://developer.cloudbees.com/bin/view/RUN/BeesSDK) "`app:deploy`" command.
 
 ```
 bees app:deploy -a <ACCOUNT_ID>/<APP_ID> -t jetty9 -RPLUGIN.SRC.jetty9=https://felix.ci.cloudbees.com/job/jetty9-clickstack/lastSuccessfulBuild/artifact/jetty9-plugin.zip <PATH_TO_WAR_FILE>.war
 ```
 
-# How to bind a CloudBees MySql database to an application on a Tomcat7 ClickStack
+# How to bind a CloudBees MySql database to an application on a Jetty9 ClickStack
 
 ## Create database if needed
 ```
@@ -50,14 +50,13 @@ Details on bindings are available in [Binding services (resources) to applicatio
 
 #### Plain Java
 
-You can now use your "`java:comp/env/jdbc/mydb`" JNDI DataSource in your application.
-Please note that "`jdbc/mydb`" is also available.
+You can now use your "`jdbc/mydb`" JNDI DataSource in your application.
 
 Java code sample:
 
 ```java
 Context ctx = new InitialContext();
-DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/mydb");
+DataSource ds = (DataSource) ctx.lookup("jdbc/mydb");
 Connection conn = ds.getConnection();
 ResultSet rst = stmt.executeQuery("select 1");
 while (rst.next()) {
