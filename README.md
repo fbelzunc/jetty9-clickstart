@@ -2,7 +2,9 @@
 
 This is a "ClickStart" that gets you going with a Maven - Jetty 9 "seed" project starting point. You can launch it here:
 
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/fbelzunc/jetty9-clickstart/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
+<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/fbelzunc/jetty9-clickstart/blob/master/%20clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
+
+%20clickstart.json
 
 This will setup a continuous deployment pipeline - a CloudBees Git repository, a Jenkins build compiling and running the test suite (on each commit).
 Should the build succeed, this seed app is deployed on a Jetty 9 container.
