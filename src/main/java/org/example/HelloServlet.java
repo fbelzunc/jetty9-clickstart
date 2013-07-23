@@ -16,7 +16,7 @@ public class HelloServlet extends HttpServlet {
 
 		try {
 
-			DataSource ds = (DataSource) ic.lookup("jdbc/mydb");
+			DataSource ds = (DataSource) ic.lookup("java:comp/env/jdbc/mydb");
 
 			Connection conn = ds.getConnection();
 			Statement stmt = conn.createStatement();
