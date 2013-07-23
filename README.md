@@ -38,6 +38,16 @@ bees app:bind -a <APP_ID> -db jetty9-maven-clickstart-db -as mydb
 This binding will create
 
 * A JNDI DataSource with name "`java:comp/env/jdbc/mydb`" (also available at "`jdbc/mydb`")
+  * In the case of `java:comp/env/jdbc/mydb` you should add this code on your web.xml file
+
+```java
+  <resource-ref>
+   <res-ref-name>jdbc/mydb</res-ref-name>
+   <res-type>javax.sql.DataSource</res-type>
+   <res-auth>Container</res-auth>
+  </resource-ref>
+```
+ 
 * The following System Properties
   * `DATABASE_URL_MYDB`: url of the database starting with "mysql:" (e.g. "mysql://ec2-1.2.3.4.compute-1.amazonaws.com:3306/jetty9-maven-clickstart-db"). **Please note** that this URL is **not** prefixed by "jdbc:".
   * `DATABASE_USERNAME_MYDB`: login of the database
